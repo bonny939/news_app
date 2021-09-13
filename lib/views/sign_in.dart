@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_news/views/signup.dart';
 import 'package:smart_news/views/widgets.dart';
 
 class SignIn extends StatefulWidget {
@@ -67,12 +68,18 @@ class _SignInState extends State<SignIn> {
                   Text(
                     "Do you have an account?",
                   ),
-                  Text(
-                    "SignUp",
-                    style: TextStyle(
-                        color: Colors.blue,
-                        decoration: TextDecoration.underline),
-                  )
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) => SignUp()));
+                    },
+                    child: Text(
+                      "SignUp",
+                      style: TextStyle(
+                          color: Colors.blue,
+                          decoration: TextDecoration.underline),
+                    ),
+                  ),
                 ],
               ),
               SizedBox(height: 10),
